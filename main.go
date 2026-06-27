@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gyulaieric/stauction/internal/repository"
+)
 
 func main() {
-	fmt.Println("Hello, Stauction!")
+	gs := repository.NewGitStore("data/stalzone-database")
+	gs.SyncRepo()
+	// gs.StartPullWorker(context.Background(), time.Minute)
 }
